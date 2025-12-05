@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <h2>Click anywhere on the page</h2>
+  <h1 id="output"></h1>
+
+  <script>
+    document.addEventListener("mousedown", function(event) {
+                                                const output = document.getElementById("output");
+
+                                                if (event.button === 0) {
+                                                    output.textContent = "Left";
+                                                } else if (event.button === 2) {
+                                                    output.textContent = "Right";
+                                                }
+                                            });
+
+  </script>
+</body>
+</html>

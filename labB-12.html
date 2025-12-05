@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number to Words</title>
+</head>
+<body>
+<script>
+function numberToWords(num) {
+    const units = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+    const teens = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
+    const tens = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+
+    if (num < 10) return units[num];
+    else if (num < 20) return teens[num - 10];
+    else if (num < 100) {
+        let t = Math.floor(num / 10);
+        let u = num % 10;
+        return tens[t] + (u !== 0 ? " " + units[u] : "");
+    }
+    else if (num < 1000) {
+        let h = Math.floor(num / 100);
+        let remainder = num % 100;
+        let result = units[h] + " hundred";
+        if (remainder > 0) {
+            result += " and " + numberToWords(remainder);
+        }
+        return result;
+    }
+    if(num > 1000) return "out of range";
+    return "not a digit";
+}
+let i = parseInt(prompt("Enter number: "));
+// Print numbers from 0 to 999
+alert(i + " → " + numberToWords(i));
+</script>
+</body>
+</html>

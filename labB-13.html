@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <script>
+    let a = prompt("Enter string: "); 
+    let f0 = -1, f1 = -1;
+    ans = "";
+    // first occurrence of 'a'
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] === 'a') {
+        f0 = i + 1;
+        break;     
+      }
+    }
+
+    // last occurrence of 'a'
+    for (let i = a.length - 1; i >= 0; i--) {
+      if (a[i] === 'a') {
+        f1 = i + 1;
+        break;
+      }
+    }
+    
+    for(i=f0;i<f1-1;i++){
+        ans = ans+a[i];
+    }
+    alert(f0 + "," + f1 +"\t" +ans);
+  </script>
+</body>
+</html>

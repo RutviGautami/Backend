@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkbox Example</title>
+</head>
+<body>
+  <h3>Select your options:</h3>
+  
+  <label><input type="checkbox" value="Apple" class="item"> Apple</label><br>
+  <label><input type="checkbox" value="Banana" class="item"> Banana</label><br>
+  <label><input type="checkbox" value="Cherry" class="item"> Cherry</label><br>
+  <label><input type="checkbox" value="Mango" class="item"> Mango</label><br>
+  
+  <h4>Selected Values:</h4>
+  <p id="result"></p>
+  
+  <script>
+    const checkboxes = document.querySelectorAll('.item');
+    const result = document.getElementById('result');
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const selected = Array.from(checkboxes)
+                              .filter(c => c.checked)
+                              .map(c => c.value);
+        result.textContent = selected.join(', ');
+      });
+    });
+  </script>
+</body>
+</html>
