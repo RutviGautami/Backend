@@ -65,3 +65,4 @@ cpus.forEach((cpu, index) => {
   console.log(`Core ${index + 1}: ${cpu.model}`);
 });
 console.log(os.networkInterfaces());
+
